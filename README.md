@@ -8,7 +8,7 @@ Professors often struggle to identify students at risk of failing until major as
 Proposed Solution:
 A web-based system that helps instructors monitor students' academic performance and identify those at risk of failing early.
 
-Main Features:**
+Main Features:
 
 - Risk Classification: Automatically categorizes students into Safe, Warning, or Critical Risk based on their grades.
 - Automated Alerts: Notifies professors when a student reaches the Critical Risk level.
