@@ -1,79 +1,113 @@
-# Pulse-ED-ICA-Project
-BINF301 Information and Communication Architecture Course Project - GIU
 PulseEd - Enhance Academic Health
 
-BINF301 - Information and Communication Architecture
-
-Project Deliverable 1 (PD1)
+Project Deliverable 1
 
 Team Leaders: Marwan Ragaie, Salma Amr
 
-1. Project Overview
+1. App Idea
 
-PulseEd is an academic health and early-warning platform designed to identify students who may be at risk of failing after midterm assessments.
+Concept and Purpose:
 
-The system evaluates student grades, identifies different academic risk levels, sends alerts to faculty members, and organizes mandatory TA office hours to help students improve their performance and reach their recovery targets.
+PulseEd is a proactive academic health and early-warning platform that evaluates post-midterm student grades against clear risk boundaries to detect failing trajectories early, alert faculty, and assign mandatory TA office hours until recovery targets are met.
 
-Problem Statement
+The Real Problem:
 
-Academic performance problems are often discovered too late, making it difficult for students to improve their grades. Manually tracking student performance also takes up a lot of faculty time.
+Grade drop-offs often surface after midterms or finals when recovery is already too late, and manual grade tracking wastes valuable faculty time.
 
-Target Users
+Target Users:
 
-Course Professors: Monitor student performance and manage academic interventions.
+Course Professors: Auditing overall class health and managing interventions.
 
-Teaching Assistants (TAs): Conduct recovery sessions and provide support to students who are struggling academically.
+Teaching Assistants (TAs): Leading mandatory office-hour recovery sessions.
 
-At-Risk Students: Receive academic guidance and track their progress.
+At-Risk Students: Receiving structured guidance and recovery tracking.
 
-2. Core Features
+Core System Modules and Features
 
 1. Weighted Grade Calculator
-Calculates students' current course standing based on their grades.
+
+Computes real-time post-midterm course standing.
+
+Owner: [Full Name], Student ID: [Student ID]
 
 2. Tiered Risk Classifier
-Classifies students into Safe, Warning, and Critical Risk categories.
+
+Categorizes students into Safe, Warning, and Critical Risk zones.
+
+Owner: [Full Name], Student ID: [Student ID]
 
 3. Automated Alert Dispatcher
-Sends and records SMS and email alerts for students identified as at risk.
+
+Sends and logs instant SMS and email alerts for flagged students.
+
+Owner: [Full Name], Student ID: [Student ID]
 
 4. Required Final Score Estimator
-Calculates the minimum final exam score a student needs to pass the course.
+
+Calculates the minimum passing score a student needs on the final exam.
+
+Owner: [Full Name], Student ID: [Student ID]
 
 5. TA Office-Hour Assigner
-Schedules mandatory weekly TA sessions and checks available TA capacity.
+
+Books mandatory weekly TA sessions with TA capacity checks.
+
+Owner: [Full Name], Student ID: [Student ID]
 
 6. Weekly Recovery Simulator
-Tracks students' academic progress until they meet the required recovery targets.
 
-3. User Stories and Acceptance Criteria
+Tracks weekly academic progress until the student's risk indicator clears.
 
-The project includes user stories covering the following functions:
+Owner: [Full Name], Student ID: [Student ID]
 
-1. Viewing student records and grades.
-2. Updating student grades.
-3. Identifying students at risk of failing.
-4. Sending SMS alerts to students at risk.
-5. Monitoring student academic recovery.
 
-Each user story includes acceptance criteria describing the expected system behavior, including normal operations and error handling.
+2. User Stories and Acceptance Criteria
 
-4. Wireframes
+User Story 01: View Student Records
 
-The low-fidelity wireframes are included in the PD1s.pdf file.
+As a professor, I want to view enrolled students with their grades, so that I can monitor performance.
 
-They cover the following sections:
+Acceptance Criteria:
 
-Home, login, and dashboard screens, including system access and an overview of class performance.
+1. Course Roster: Lists students enrolled in the assigned course.
 
-Dashboard sections showing class statistics, student progress, and academic risk levels.
+2. Record Fields: Displays student name, ID, midterm grade, assignments, and current standing.
 
-Main navigation, including Home, Projects, and Tasks.
+3. Drill-Down: Allows selecting any student for an individual record view.
 
-Support sections, including the Help Center, Contact, Account Details, Notification Settings, Messages, Profile, and Settings.
+4. Empty State: Displays "No students enrolled in this course." when the roster is empty.
 
-5. Team Contributions
 
-Each team member is responsible for developing one feature, including its design, implementation, and documentation.
+User Story 02: Update Student Grades
 
-Feature owners and student IDs will be added to the final project documentation.
+As a professor, I want to enter and update student grades, so that records stay accurate.
+
+Acceptance Criteria:
+
+1. Grade Entry: Enables editing grades for individual enrolled students.
+
+2. Auto-Sync: Updates the student's record immediately upon valid submission.
+
+3. Range Check: Rejects grades below zero or above the maximum allowed score.
+
+4. Empty Guard: Blocks blank inputs with a clear validation warning.
+
+
+User Story 03: Post-Midterm Failing Risk Indicators
+
+As a professor, I want post-midterm failing risk indicators, so that I can identify who needs support.
+
+Acceptance Criteria:
+
+1. Auto-Audit: Evaluates student performance automatically from post-midterm grades.
+
+2. Visual Flag: Highlights failing candidates with a clear warning badge.
+
+3. Clean Safe List: Safe students appear cleanly without a warning badge.
+
+4. Data Guard: Prompts for additional grades if existing data is insufficient.
+
+
+User Story 04: SMS Alerts for Failing-Risk Students
+
+As a professor, I want SMS alerts for failing-risk
