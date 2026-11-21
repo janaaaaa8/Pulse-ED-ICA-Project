@@ -28,37 +28,25 @@ Core System Modules and Features
 
 Computes real-time post-midterm course standing.
 
-Owner: [Full Name], Student ID: [Student ID]
-
 2. Tiered Risk Classifier
 
 Categorizes students into Safe, Warning, and Critical Risk zones.
-
-Owner: [Full Name], Student ID: [Student ID]
 
 3. Automated Alert Dispatcher
 
 Sends and logs instant SMS and email alerts for flagged students.
 
-Owner: [Full Name], Student ID: [Student ID]
-
 4. Required Final Score Estimator
 
 Calculates the minimum passing score a student needs on the final exam.
-
-Owner: [Full Name], Student ID: [Student ID]
 
 5. TA Office-Hour Assigner
 
 Books mandatory weekly TA sessions with TA capacity checks.
 
-Owner: [Full Name], Student ID: [Student ID]
-
 6. Weekly Recovery Simulator
 
 Tracks weekly academic progress until the student's risk indicator clears.
-
-Owner: [Full Name], Student ID: [Student ID]
 
 
 2. User Stories and Acceptance Criteria
