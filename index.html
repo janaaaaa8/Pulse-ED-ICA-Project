@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PulseEd — Academic Early Warning &amp; Intervention System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <!-- ==================== VIEW 1: DOCTOR LOGIN ==================== -->
+    <section id="view-login" class="view active" aria-label="Doctor Login">
+      <div class="login-bg-decor">
+        <svg class="pulse-wave wave-left" viewBox="0 0 260 120" fill="none" aria-hidden="true">
+          <path d="M0 78H56L74 36L96 104L118 14L142 92L160 66H260" stroke="#7c83fd" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.28" />
+        </svg>
+        <svg class="pulse-wave wave-right" viewBox="0 0 260 120" fill="none" aria-hidden="true">
+          <path d="M0 64H54L72 24L95 102L117 18L138 88L158 64H260" stroke="#4f46e5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.24" />
+        </svg>
+        <svg class="mesh-left" viewBox="0 0 220 220" fill="none" aria-hidden="true">
+          <circle cx="42" cy="54" r="4" fill="#818cf8" opacity="0.45" />
+          <circle cx="118" cy="28" r="3.5" fill="#38bdf8" opacity="0.45" />
+          <circle cx="164" cy="86" r="4.5" fill="#818cf8" opacity="0.4" />
+          <circle cx="88" cy="124" r="5" fill="#a78bfa" opacity="0.4" />
+          <circle cx="146" cy="168" r="3.5" fill="#38bdf8" opacity="0.45" />
+          <line x1="42" y1="54" x2="118" y2="28" stroke="#94a3b8" stroke-width="1" opacity="0.35" />
+          <line x1="118" y1="28" x2="164" y2="86" stroke="#94a3b8" stroke-width="1" opacity="0.35" />
+          <line x1="42" y1="54" x2="88" y2="124" stroke="#94a3b8" stroke-width="1" opacity="0.35" />
+          <line x1="88" y1="124" x2="164" y2="86" stroke="#94a3b8" stroke-width="1" opacity="0.35" />
+          <line x1="88" y1="124" x2="146" y2="168" stroke="#94a3b8" stroke-width="1" opacity="0.35" />
+          <line x1="164" y1="86" x2="146" y2="168" stroke="#94a3b8" stroke-width="1" opacity="0.35" />
+        </svg>
+        <svg class="mesh-right" viewBox="0 0 240 220" fill="none" aria-hidden="true">
+          <circle cx="64" cy="40" r="4" fill="#818cf8" opacity="0.45" />
+          <circle cx="152" cy="30" r="4" fill="#38bdf8" opacity="0.4" />
+          <circle cx="196" cy="96" r="4.5" fill="#818cf8" opacity="0.4" />
+          <circle cx="118" cy="112" r="4" fill="#6366f1" opacity="0.4" />
+          <circle cx="168" cy="166" r="4" fill="#38bdf8" opacity="0.4" />
+          <line x1="64" y1="40" x2="152" y2="30" stroke="#94a3b8" stroke-width="1" opacity="0.35" />
+          <line x1="152" y1="30" x2="196" y2="96" stroke="#94a3b8" stroke-width="1" opacity="0.35" />
+          <line x1="64" y1="40" x2="118" y2="112" stroke="#94a3b8" stroke-width="1" opacity="0.35" />
+          <line x1="118" y1="112" x2="196" y2="96" stroke="#94a3b8" stroke-width="1" opacity="0.35" />
+          <line x1="118" y1="112" x2="168" y2="166" stroke="#94a3b8" stroke-width="1" opacity="0.35" />
+        </svg>
+        <div class="orb orb-bl"></div>
+        <div class="orb orb-br"></div>
+      </div>
+
+      <header class="login-topbar">
+        <div class="brand-block">
+          <div class="brand-mark" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+              <rect x="2" y="2" width="24" height="24" rx="7" fill="url(#brandGrad1)" />
+              <path d="M6 15H10.5L12.5 9.5L15.5 18.5L17.5 13.5H22" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+              <defs>
+                <linearGradient id="brandGrad1" x1="2" y1="2" x2="26" y2="26" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4f46e5" />
+                  <stop offset="1" stop-color="#0ea5e9" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div>
+            <div class="brand-title">PulseEd</div>
+            <div class="brand-subtitle">Academic Early Warning &amp; Intervention System</div>
+          </div>
+        </div>
+
+        <div class="login-header-actions">
+          <label class="lang-select-wrap" aria-label="Select Language">
+            <select id="login-lang-select" class="lang-select">
+              <option value="EN" selected>English (EN)</option>
+              <option value="DE">Deutsch (DE)</option>
+              <option value="AR">العربية (AR)</option>
+            </select>
+          </label>
+          <button type="button" id="btn-help-support" class="ghost-header-btn">
+            <span class="btn-icon" aria-hidden="true">?</span>
+            <span>Help &amp; Support</span>
+          </button>
+          <button type="button" id="btn-faculty-portal" class="outline-header-btn">
+            Faculty &amp; Staff Portal
+          </button>
+        </div>
+      </header>
+
+      <main class="login-main">
+        <div class="login-card">
+          <div class="secure-pill">
+            <span class="lock-dot" aria-hidden="true">🔒</span>
+            <span>Secure Doctor Portal</span>
+          </div>
+
+          <h1 class="login-heading">Doctor Login</h1>
+          <p class="login-subtext">Sign in to access student monitoring and academic risk information</p>
+
+          <form id="doctor-login-form" class="login-form" novalidate>
+            <div class="field-group">
+              <label for="doctor-email-id" class="field-label">Doctor Email / University ID</label>
+              <div class="input-wrapper">
+                <span class="input-leading-icon" aria-hidden="true">✉</span>
+                <input
+                  id="doctor-email-id"
+                  type="text"
+                  class="text-input with-leading"
+                  placeholder="Enter your email or university ID"
+                  value="reham.h@pulseed.edu"
+                  autocomplete="username"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="doctor-password" class="field-label">Password</label>
+              <div class="input-wrapper">
+                <span class="input-leading-icon" aria-hidden="true">🔒</span>
+                <input
+                  id="doctor-password"
+                  type="password"
+                  class="text-input with-leading with-trailing"
+                  placeholder="Enter your password"
+                  value="••••••••••••"
+                  autocomplete="current-password"
+                  required
+                />
+                <button type="button" id="toggle-password-btn" class="input-trailing-btn" aria-label="Toggle password visibility">
+                  <span aria-hidden="true">👁</span>
+                  <span id="toggle-password-text">Show</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="login-meta-row">
+              <label class="checkbox-label">
+                <input id="remember-doctor-chk" type="checkbox" checked />
+                <span>Remember me</span>
+              </label>
+              <button type="button" id="btn-forgot-password" class="link-btn">Forgot password?</button>
+            </div>
+
+            <button type="submit" id="btn-login-submit" class="primary-login-btn">
+              <span aria-hidden="true">🔒</span>
+              <span>Log In</span>
+            </button>
+          </form>
+
+          <div class="login-card-footer">
+            <div class="auth-notice-title">
+              <span aria-hidden="true">🛡</span>
+              <span>Authorized university doctors only</span>
+            </div>
+            <p class="auth-notice-sub">
+              Access restricted to certified medical staff, faculty advisors, and system administrators
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="login-bottom-footer">
+        <div>© 2026 PulseEd Academic Early Warning &amp; Intervention System. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="#privacy" class="footer-link-item" data-info="Privacy Policy — FERPA &amp; institutional academic health data protection standards.">Privacy Policy</a>
+          <span>·</span>
+          <a href="#terms" class="footer-link-item" data-info="Terms of Service — Authorized faculty and academic advisor usage agreement.">Terms of Service</a>
+          <span>·</span>
+          <a href="#security" class="footer-link-item" data-info="Security &amp; Compliance — Role-based access control, audit logging, and TLS 1.3 encryption.">Security &amp; Compliance</a>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ==================== SHARED APP SHELL (VIEWS 2–5) ==================== -->
+    <div id="workspace-shell" class="workspace-shell hidden">
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" id="topbar-brand-home" class="brand-home-btn" title="Return to Doctor Login">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="24" height="24" rx="7" fill="url(#brandGrad2)" />
+              <path d="M6 15H10.5L12.5 9.5L15.5 18.5L17.5 13.5H22" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+              <defs>
+                <linearGradient id="brandGrad2" x1="2" y1="2" x2="26" y2="26" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4f46e5" />
+                  <stop offset="1" stop-color="#0ea5e9" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="topbar-brand-text">
+              <span class="topbar-brand-name">PulseEd</span>
+              <span id="topbar-brand-sub" class="topbar-brand-sub">Academic Early Warning &amp; Intervention System</span>
+            </div>
+          </button>
+
+          <div class="topbar-divider"></div>
+
+          <div class="context-title-block">
+            <div id="topbar-page-title" class="topbar-page-title">Main Dashboard</div>
+            <div id="topbar-page-subtitle" class="topbar-page-subtitle">Student Academic Health &amp; Warning Simulator</div>
+          </div>
+        </div>
+
+        <div class="topbar-center">
+          <div class="global-search-box">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input
+              id="global-student-search"
+              type="text"
+              class="global-search-input"
+              placeholder="Search students, courses, cohorts..."
+              aria-label="Search students, courses, cohorts"
+            />
+            <div id="global-search-results" class="search-dropdown hidden" role="listbox"></div>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button type="button" id="btn-notifications" class="icon-circle-btn" title="Notifications &amp; SMS Alerts" aria-label="Notifications">
+            <span aria-hidden="true">🔔</span>
+            <span id="notif-badge" class="notif-dot">3</span>
+          </button>
+          <button type="button" id="btn-topbar-help" class="icon-circle-btn" title="System Help &amp; Threshold Guide" aria-label="Help">
+            <span aria-hidden="true">?</span>
+          </button>
+          <div class="instructor-chip" id="instructor-profile-chip">
+            <img
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80"
+              alt="Dr. Reham H."
+              class="avatar-sm"
+            />
+            <div class="instructor-meta">
+              <div class="instructor-name">Dr. Reham H.</div>
+              <div class="instructor-role">Instructor &amp; Advisor</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sub-Navigation Bar (adapts cleanly between Dashboard/Profile/Grade-Comments and Risk Prediction Calculator) -->
+      <nav id="subnav-bar" class="subnav-bar" aria-label="Workspace Navigation">
+        <div id="subnav-tabs-default" class="subnav-tabs">
+          <button type="button" class="subnav-tab active" data-target-view="dashboard">
+            <span aria-hidden="true">📋</span>
+            <span>SAT Dashboard</span>
+          </button>
+          <button type="button" class="subnav-tab" data-target-view="institutional">
+            <span aria-hidden="true">🏛</span>
+            <span>Institutional View</span>
+          </button>
+          <button type="button" class="subnav-tab" data-target-view="profile">
+            <span aria-hidden="true">👤</span>
+            <span>Student Profile</span>
+          </button>
+        </div>
+
+        <div id="subnav-tabs-calculator" class="subnav-tabs hidden">
+          <button type="button" class="subnav-tab" data-target-view="dashboard">
+            <span aria-hidden="true">⊞</span>
+            <span>Dashboard</span>
+          </button>
+          <button type="button" class="subnav-tab" data-target-view="profile">
+            <span aria-hidden="true">👤</span>
+            <span>Student Profile</span>
+          </button>
+          <button type="button" class="subnav-tab active" data-target-view="calculator">
+            <span aria-hidden="true">✨</span>
+            <span>Risk Prediction</span>
+          </button>
+          <button type="button" class="subnav-tab" data-target-view="explainable-ai">
+            <span aria-hidden="true">🧠</span>
+            <span>Explainable AI</span>
+          </button>
+          <button type="button" class="subnav-tab" data-target-view="interventions">
+            <span aria-hidden="true">📋</span>
+            <span>Interventions</span>
+          </button>
+          <button type="button" class="subnav-tab" data-target-view="institutional">
+            <span aria-hidden="true">🏛</span>
+            <span>Institutional View</span>
+          </button>
+        </div>
+
+        <div id="subnav-filters" class="subnav-filters">
+          <select id="filter-semester" class="filter-select" aria-label="Semester">
+            <option value="Fall 2026" selected>Semester: Fall 2026</option>
+            <option value="Spring 2026">Semester: Spring 2026</option>
+            <option value="Fall 2025">Semester: Fall 2025</option>
+          </select>
+
+          <select id="filter-department" class="filter-select" aria-label="Department">
+            <option value="Business Informatics" selected>Department: Business Informatics</option>
+            <option value="Computer Science">Department: Computer Science</option>
+            <option value="Management Technology">Department: Management Technology</option>
+          </select>
+
+          <select id="filter-threshold" class="filter-select" aria-label="Risk Threshold">
+            <option value="High & Medium" selected>Risk Threshold: High &amp; Medium</option>
+            <option value="High Only">Risk Threshold: High Only</option>
+            <option value="All Levels">Risk Threshold: All Levels</option>
+          </select>
+
+          <button type="button" id="btn-export-report" class="export-btn">
+            <span aria-hidden="true">⬇</span>
+            <span id="export-btn-label">Export Report</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- ==================== VIEW 2: MAIN / SAT DASHBOARD ==================== -->
+      <section id="view-dashboard" class="view workspace-view" aria-label="Main Dashboard">
+        <div class="kpi-grid">
+          <article class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">Total Students Monitored</span>
+              <span class="kpi-icon-muted" aria-hidden="true">👥</span>
+            </div>
+            <div id="kpi-total-students" class="kpi-value">1,420</div>
+            <div class="kpi-trend positive">↗ +2.4% from last term</div>
+          </article>
+
+          <article class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">At High Academic Risk</span>
+              <span class="kpi-icon-danger" aria-hidden="true">●</span>
+            </div>
+            <div id="kpi-high-risk" class="kpi-value danger-text">84 Students</div>
+            <div class="kpi-badge-pill danger-soft">⚠ Urgent Attention Needed</div>
+          </article>
+
+          <article class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">Pending Interventions</span>
+              <span class="kpi-icon-warn" aria-hidden="true">⚠</span>
+            </div>
+            <div class="kpi-value-inline">
+              <span id="kpi-pending-count" class="kpi-value">36</span>
+              <span class="kpi-value-suffix">Active</span>
+            </div>
+            <div class="kpi-sub">Mandatory TA Office Hours assigned</div>
+          </article>
+
+          <article class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">Risk Resolution Rate</span>
+              <span class="kpi-icon-success" aria-hidden="true">◔</span>
+            </div>
+            <div id="kpi-resolution-rate" class="kpi-value">78.5%</div>
+            <div class="kpi-badge-pill success-soft">↗ +5.2% improved</div>
+          </article>
+        </div>
+
+        <div class="charts-grid">
+          <!-- Left Chart: Academic Risk Distribution by Midterm Performance -->
+          <article class="panel-card chart-panel">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Academic Risk Distribution by Midterm Performance</h2>
+                <p class="panel-subtitle">Student distribution across risk categories by course module</p>
+              </div>
+              <div class="chart-filter-pills" id="course-module-filter">
+                <button type="button" class="mini-pill active" data-course="ALL">All Modules</button>
+                <button type="button" class="mini-pill" data-course="BNF 301">BNF 301</button>
+                <button type="button" class="mini-pill" data-course="Java OOP">Java OOP</button>
+              </div>
+            </div>
+
+            <div class="midterm-chart-stage" id="midterm-chart-stage">
+              <div id="midterm-tooltip" class="floating-chart-tooltip">
+                <div class="tt-row"><span class="tt-label">High Risk:</span><span id="tt-high" class="tt-val tt-high">84</span></div>
+                <div class="tt-row"><span class="tt-label">Medium Risk:</span><span id="tt-med" class="tt-val tt-med">90</span></div>
+                <div class="tt-row"><span class="tt-label">Low Risk:</span><span id="tt-low" class="tt-val tt-low">13</span></div>
+              </div>
+              <div id="midterm-bars-container" class="grouped-bars-canvas"></div>
+            </div>
+
+            <div class="chart-legend-center">
+              <span class="legend-item"><i class="swatch swatch-high"></i>High Risk</span>
+              <span class="legend-item"><i class="swatch swatch-med"></i>Medium Risk</span>
+              <span class="legend-item"><i class="swatch swatch-low"></i>Low Risk</span>
+            </div>
+          </article>
+
+          <!-- Right Chart: Early Warning System Indicator Triggers -->
+          <article class="panel-card chart-panel">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Early Warning System Indicator Triggers</h2>
+                <p class="panel-subtitle">Distribution of risk indicators and thresholds across student cohort</p>
+              </div>
+            </div>
+
+            <div class="ews-body">
+              <div class="ews-bars-col">
+                <div id="ews-bars-container" class="ews-bars-canvas"></div>
+                <div class="chart-legend-center">
+                  <span class="legend-item"><i class="swatch swatch-high"></i>High Risk</span>
+                  <span class="legend-item"><i class="swatch swatch-med"></i>Medium Risk</span>
+                  <span class="legend-item"><i class="swatch swatch-low"></i>Low Risk</span>
+                </div>
+              </div>
+
+              <aside class="risk-drivers-col" aria-label="Risk Drivers">
+                <h3 class="drivers-heading">Risk Drivers</h3>
+                <ul class="drivers-list">
+                  <li class="driver-row">
+                    <span class="driver-name">Midterm Grade &lt; 50%</span>
+                    <span class="driver-pct">50%</span>
+                  </li>
+                  <li class="driver-row">
+                    <span class="driver-name">Attendance Drop (&lt; 75%)</span>
+                    <span class="driver-pct">75%</span>
+                  </li>
+                  <li class="driver-row">
+                    <span class="driver-name">Missed Lab Assignments</span>
+                    <span class="driver-pct">20%</span>
+                  </li>
+                  <li class="driver-row">
+                    <span class="driver-name">Quiz Failure Threshold</span>
+                    <span class="driver-pct">10%</span>
+                  </li>
+                </ul>
+                <div id="sms-alert-banner" class="sms-alert-box">
+                  <span aria-hidden="true">⚠</span>
+                  <span>Recent Auto-SMS Alerts Dispatched: <strong id="sms-dispatched-count">14 today</strong></span>
+                </div>
+              </aside>
+            </div>
+          </article>
+        </div>
+
+        <!-- Bottom Table: Prioritized Student Risk Table & Intervention Queue -->
+        <article class="panel-card table-panel">
+          <div class="panel-header table-header-row">
+            <div>
+              <h2 class="panel-title">Prioritized Student Risk Table &amp; Intervention Queue</h2>
+              <p class="panel-subtitle">Click <strong>View</strong> on any student to open their Academic Health Profile or jump to Grade &amp; Doctor Comments</p>
+            </div>
+            <div class="table-quick-filters">
+              <button type="button" class="chip-filter active" data-risk-filter="ALL">All Queue</button>
+              <button type="button" class="chip-filter" data-risk-filter="HIGH">High Risk</button>
+              <button type="button" class="chip-filter" data-risk-filter="MEDIUM">Medium Risk</button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table" id="queue-table">
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th>Course</th>
+                  <th>Risk Level</th>
+                  <th>Midterm Grade</th>
+                  <th>Trigger Indicator</th>
+                  <th>Assigned Action</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="queue-table-body"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==================== VIEW 3: STUDENT PROFILE ==================== -->
+      <section id="view-profile" class="view workspace-view" aria-label="Student Profile">
+        <article class="panel-card search-profile-card">
+          <h2 class="panel-title">Search Student Profile</h2>
+          <form id="student-lookup-form" class="lookup-row">
+            <div class="input-wrapper lookup-input-wrap">
+              <span class="input-leading-icon" aria-hidden="true">🔍</span>
+              <input
+                id="student-lookup-input"
+                type="text"
+                class="text-input with-leading"
+                value="20250482"
+                placeholder="Enter Student ID (e.g., 20250482, 9006771) or name..."
+              />
+            </div>
+            <button type="submit" class="primary-indigo-btn">
+              <span aria-hidden="true">🔍</span>
+              <span>Search Student</span>
+            </button>
+          </form>
+          <p id="lookup-status-caption" class="lookup-caption">
+            Showing academic health profile for Student ID: <strong id="caption-student-id">20250482</strong>
+          </p>
+        </article>
+
+        <div class="profile-main-grid">
+          <div class="profile-left-col">
+            <!-- Student Information Banner -->
+            <article class="panel-card student-bio-card">
+              <div class="student-bio-left">
+                <img
+                  id="profile-avatar"
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&q=80"
+                  alt="Student A (Mary Pertem)"
+                  class="avatar-lg"
+                />
+                <div>
+                  <h2 id="profile-student-name" class="student-bio-name">Student A (Mary Pertem)</h2>
+                  <p id="profile-student-meta" class="student-bio-meta">
+                    ID: 20250482 · Department: Business Informatics · Current Semester: Semester 3 (Fall 2026)
+                  </p>
+                  <div class="student-bio-badges">
+                    <span class="meta-inline">
+                      Risk Level:
+                      <span id="profile-risk-badge" class="badge-pill badge-medium">MEDIUM RISK</span>
+                    </span>
+                    <span class="meta-inline">
+                      Assigned Advisor: <strong id="profile-advisor-name">Dr. Reham H.</strong>
+                    </span>
+                    <span class="meta-inline">
+                      Advisor Alert: <strong id="profile-alert-state" class="alert-amber">Pending Follow-up</strong>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" id="btn-view-risk-prediction" class="primary-indigo-btn">
+                <span>View Risk Prediction →</span>
+              </button>
+            </article>
+
+            <!-- Academic Performance Metrics -->
+            <article class="panel-card">
+              <h3 class="section-subheading">Academic Performance Metrics</h3>
+              <div class="metrics-four-grid">
+                <div class="metric-box">
+                  <div class="metric-box-top">
+                    <span class="metric-box-label">Attendance Rate</span>
+                    <span class="metric-warn-icon" aria-hidden="true">⚠</span>
+                  </div>
+                  <div id="metric-attendance" class="metric-box-val">75%</div>
+                  <div id="metric-attendance-note" class="metric-sub-warn">↗ -5% below target</div>
+                </div>
+
+                <div class="metric-box">
+                  <div class="metric-box-top">
+                    <span class="metric-box-label">Midterm Score</span>
+                    <span class="badge-soft-amber">Medium Warning</span>
+                  </div>
+                  <div id="metric-midterm" class="metric-box-val">65%</div>
+                  <div id="metric-midterm-note" class="metric-sub-muted">Class average: 68%</div>
+                </div>
+
+                <div class="metric-box">
+                  <div class="metric-box-top">
+                    <span class="metric-box-label">Quiz Average</span>
+                    <span class="badge-soft-indigo">Stable</span>
+                  </div>
+                  <div id="metric-quiz" class="metric-box-val">70%</div>
+                  <div id="metric-quiz-note" class="metric-sub-muted">5 quizzes completed</div>
+                </div>
+
+                <div class="metric-box">
+                  <div class="metric-box-top">
+                    <span class="metric-box-label">Assignment Average</span>
+                    <span class="badge-soft-green">Good</span>
+                  </div>
+                  <div id="metric-assignment" class="metric-box-val">80%</div>
+                  <div id="metric-assignment-note" class="metric-sub-muted">10 submissions recorded</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Academic History & Current Performance -->
+            <article class="panel-card">
+              <h3 class="section-subheading">Academic History &amp; Current Performance</h3>
+              <div class="table-responsive">
+                <table class="data-table compact-table">
+                  <thead>
+                    <tr>
+                      <th>Course</th>
+                      <th>Previous Grade</th>
+                      <th>Current Grade</th>
+                      <th>Risk Status</th>
+                      <th>Attendance</th>
+                      <th>Assignments</th>
+                      <th>Risk Trend</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="profile-courses-body"></tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <!-- Right Sidebar: Interventions & Actions -->
+          <aside class="profile-right-col">
+            <article class="panel-card interventions-card">
+              <h3 class="section-subheading">Interventions &amp; Actions</h3>
+
+              <div class="current-status-block">
+                <div class="status-block-label">Current Status:</div>
+                <div id="profile-current-status-text" class="status-block-value">
+                  Medium Risk - Early Support Recommended
+                </div>
+              </div>
+
+              <div class="next-steps-block">
+                <div class="next-steps-heading">Recommended Next Steps</div>
+
+                <div class="step-item">
+                  <span class="step-icon" aria-hidden="true">📅</span>
+                  <div>
+                    <div class="step-title">Mandatory TA Office Hours</div>
+                    <div id="step-ta-detail" class="step-sub">Scheduled for Nov 24, TA Iman</div>
+                  </div>
+                </div>
+
+                <div class="step-item">
+                  <span class="step-icon" aria-hidden="true">👥</span>
+                  <div>
+                    <div class="step-title">Academic Advisor Meeting</div>
+                    <div id="step-advisor-detail" class="step-sub">Pending scheduling</div>
+                  </div>
+                </div>
+
+                <div class="step-item">
+                  <span class="step-icon" aria-hidden="true">📄</span>
+                  <div>
+                    <div class="step-title">Study Support Plan</div>
+                    <div id="step-plan-detail" class="step-sub">Assigned</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="quick-actions-stack">
+                <div class="quick-actions-label">Quick Actions</div>
+                <button type="button" id="btn-schedule-advisor" class="action-outline-btn">
+                  <span aria-hidden="true">📅</span>
+                  <span>Schedule Advisor Meeting</span>
+                </button>
+                <button type="button" id="btn-assign-ta" class="action-outline-btn">
+                  <span aria-hidden="true">👤+</span>
+                  <span>Assign TA / Record</span>
+                </button>
+                <button type="button" id="btn-send-sms" class="action-outline-btn">
+                  <span aria-hidden="true">💬</span>
+                  <span>Send SMS Notification</span>
+                </button>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 4: ACADEMIC RISK PREDICTION CALCULATOR ==================== -->
+      <section id="view-calculator" class="view workspace-view" aria-label="Academic Risk Prediction Calculator">
+        <div class="calc-layout">
+          <!-- Left Sidebar: Simulation Parameters -->
+          <aside class="panel-card calc-sidebar">
+            <div class="calc-sidebar-header">
+              <h2 class="panel-title">Simulation Parameters</h2>
+              <button type="button" id="btn-reset-sim" class="reset-icon-btn" title="Reset to default parameters" aria-label="Reset parameters">
+                ↻
+              </button>
+            </div>
+
+            <div class="sim-field">
+              <label for="sim-student-select" class="sim-label">Student ID / Name</label>
+              <select id="sim-student-select" class="sim-select">
+                <option value="20250482" selected>20250482 - Student A</option>
+                <option value="9006771">9006771 - Mary Pertem</option>
+                <option value="2002839">2002839 - Macila Handan</option>
+                <option value="3006822">3006822 - Larry Sehan</option>
+              </select>
+            </div>
+
+            <div class="sim-field">
+              <div class="sim-label-row">
+                <label for="sim-attendance-slider" class="sim-label">Attendance Rate (%)</label>
+                <span id="sim-attendance-pill" class="sim-val-pill">75%</span>
+              </div>
+              <input id="sim-attendance-slider" type="range" min="20" max="100" value="75" class="sim-range" />
+              <div class="slider-scale"><span>20%</span><span>60%</span><span>100%</span></div>
+            </div>
+
+            <div class="sim-field">
+              <div class="sim-label-row">
+                <label for="sim-midterm-slider" class="sim-label">Midterm Score (out of 100)</label>
+                <span id="sim-midterm-pill" class="sim-val-pill">65 / 100</span>
+              </div>
+              <input id="sim-midterm-slider" type="range" min="0" max="100" value="65" class="sim-range" />
+              <div class="slider-scale"><span>0</span><span>50</span><span>100</span></div>
+            </div>
+
+            <div class="sim-field">
+              <label for="sim-course-select" class="sim-label">Course / Subject</label>
+              <select id="sim-course-select" class="sim-select">
+                <option value="BNF 301: Data Structures &amp; Algorithms" selected>BNF 301: Data Structures &amp; Algorithms</option>
+                <option value="Java OOP: Object-Oriented Programming">Java OOP: Object-Oriented Programming</option>
+                <option value="FINA 201: Financial Accounting">FINA 201: Financial Accounting</option>
+                <option value="BSIN 302: Database Systems">BSIN 302: Database Systems</option>
+              </select>
+            </div>
+
+            <div class="sim-field">
+              <label for="sim-semester-select" class="sim-label">Semester</label>
+              <select id="sim-semester-select" class="sim-select">
+                <option value="Semester 3 (Fall 2026)" selected>Semester 3 (Fall 2026)</option>
+                <option value="Semester 2 (Spring 2026)">Semester 2 (Spring 2026)</option>
+              </select>
+            </div>
+
+            <button type="button" id="btn-calculate-risk" class="calc-submit-btn">
+              <span aria-hidden="true">🧮</span>
+              <span>CALCULATE RISK RATE</span>
+            </button>
+          </aside>
+
+          <!-- Main Area: Academic Risk Prediction Calculator -->
+          <div class="calc-main-col">
+            <article class="panel-card">
+              <h1 class="calc-main-title">Academic Risk Prediction Calculator</h1>
+              <p class="calc-main-subtitle">
+                Real-time predictive simulation for identifying student academic risk based on course performance metrics
+              </p>
+
+              <div id="calc-alert-banner" class="calc-alert-banner high">
+                <span aria-hidden="true">⚠</span>
+                <span id="calc-alert-text">
+                  <strong>High Academic Risk Identified:</strong> Proactive intervention strongly recommended for this performance profile.
+                </span>
+              </div>
+
+              <div class="calc-summary-grid">
+                <div class="calc-stat-box">
+                  <div class="calc-stat-label">Selected Student</div>
+                  <div id="calc-student-title" class="calc-stat-value-md">Student ID: 20250482 · Student A</div>
+                  <div id="calc-course-sub" class="calc-stat-sub">BNF 301 / Business Informatics</div>
+                </div>
+
+                <div class="calc-stat-box">
+                  <div class="calc-stat-label">Calculated Risk Rate</div>
+                  <div class="calc-risk-rate-row">
+                    <span id="calc-risk-rate-val" class="calc-rate-big danger-text">78.4%</span>
+                    <span id="calc-risk-badge" class="badge-pill badge-high">⚠ HIGH RISK</span>
+                  </div>
+                  <div id="calc-fail-prob-sub" class="calc-stat-sub">78.4% Probability of Failing Course</div>
+                </div>
+
+                <div class="calc-stat-box">
+                  <div class="calc-stat-label">Risk Classification</div>
+                  <div id="calc-class-title" class="calc-stat-value-md">HIGH RISK (Action Triggered)</div>
+                  <div id="calc-threshold-sub" class="calc-stat-sub">Falls below critical course threshold</div>
+                </div>
+
+                <div class="calc-stat-box">
+                  <div class="calc-stat-label">Recommended Interventions</div>
+                  <div id="calc-rec-title" class="calc-stat-value-sm">Mandatory TA Office Hours &amp; Advisor Follow-up</div>
+                  <div id="calc-sms-draft-sub" class="calc-stat-sub">SMS alert drafted</div>
+                </div>
+              </div>
+
+              <!-- Explainable Risk Factor Breakdown (XAI) -->
+              <div class="xai-section">
+                <h2 class="xai-heading">Explainable Risk Factor Breakdown (XAI)</h2>
+                <p id="xai-subtitle" class="xai-subheading">
+                  SHAP feature contribution to calculated risk rate (78.4% High Risk)
+                </p>
+
+                <div id="xai-rows-container" class="xai-rows-list"></div>
+
+                <p id="xai-summary-caption" class="xai-footer-note">
+                  Primary risk drivers: Midterm score (65/100) is within the critical failure boundary and attendance (75%) is on the minimum acceptable line.
+                </p>
+              </div>
+            </article>
+
+            <!-- Recommended Intervention & Alerts -->
+            <article class="panel-card">
+              <h2 class="panel-title">Recommended Intervention &amp; Alerts</h2>
+              <div class="table-responsive">
+                <table class="data-table compact-table">
+                  <thead>
+                    <tr>
+                      <th>Action Item</th>
+                      <th>Status</th>
+                      <th>Trigger Condition</th>
+                      <th>Assigned To</th>
+                      <th>Action Button</th>
+                    </tr>
+                  </thead>
+                  <tbody id="calc-interventions-body"></tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 5: GRADE EXPLANATION & DOCTOR COMMENTS ==================== -->
+      <section id="view-grade-comments" class="view workspace-view" aria-label="Grade Explanation and Doctor Comments">
+        <div class="grade-subbar">
+          <div class="breadcrumb-trail">
+            <button type="button" id="btn-back-to-profile-link" class="breadcrumb-link">Student Profile</button>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">Grade Explanation &amp; Doctor Comments</span>
+          </div>
+          <button type="button" id="btn-back-profile-overview" class="back-outline-btn">
+            ← Back to Profile Overview
+          </button>
+        </div>
+
+        <article class="panel-card grade-student-banner">
+          <div class="grade-student-left">
+            <div class="user-circle-icon" aria-hidden="true">👤</div>
+            <div>
+              <h1 id="grade-student-name" class="grade-student-heading">Student A (Mary Pertem)</h1>
+              <p id="grade-student-meta" class="grade-student-meta">
+                ID: 20250482 · Department: Business Informatics · Current Semester: Semester 3 (Fall 2026)
+              </p>
+              <div class="grade-student-badges">
+                <span class="meta-inline">
+                  Risk Level:
+                  <span id="grade-risk-badge" class="badge-pill badge-medium">MEDIUM RISK</span>
+                </span>
+                <span class="meta-inline">
+                  Assigned Advisor: <strong>Dr. Reham H.</strong>
+                </span>
+                <span class="meta-inline">
+                  Academic Status: <strong class="status-strong">Under Academic Review</strong>
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="grade-two-col">
+          <!-- Left Card: Grade Explanation & Breakdown -->
+          <article class="panel-card">
+            <h2 class="panel-title">Grade Explanation &amp; Breakdown - BNF 301 (Data Structures)</h2>
+            <p id="grade-breakdown-sub" class="panel-subtitle">
+              Current Midterm Score: 65% · Target Threshold: 70% · Risk Level: Medium Risk
+            </p>
+
+            <div class="table-responsive">
+              <table class="data-table grade-comp-table">
+                <thead>
+                  <tr>
+                    <th>Grade Component</th>
+                    <th>Progress Grade</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="grade-components-body"></tbody>
+              </table>
+            </div>
+
+            <div class="grade-analysis-box">
+              <h3 class="analysis-box-title">Grade Analysis Summary</h3>
+              <p id="grade-analysis-text" class="analysis-box-body">
+                Student scored 65% on the midterm (falling below the 70% threshold). While programming lab submissions are steady (78%), quiz scores and attendance (75%) combined with low participation explain the overall Medium Risk classification.
+              </p>
+            </div>
+          </article>
+
+          <!-- Right Card: Doctor / Advisor Comment & Academic Review -->
+          <article class="panel-card">
+            <h2 class="panel-title">Doctor / Advisor Comment &amp; Academic Review</h2>
+            <p class="panel-subtitle">Review and document grade assessment &amp; intervention notes</p>
+
+            <form id="doctor-comment-form" class="comment-form">
+              <label for="doctor-comment-textarea" class="field-label">Write Doctor Comment / Grade Explanation</label>
+
+              <div class="rte-toolbar" role="toolbar" aria-label="Formatting options">
+                <button type="button" class="rte-btn" data-fmt="bold" title="Bold"><strong>B</strong></button>
+                <button type="button" class="rte-btn" data-fmt="italic" title="Italic"><em>I</em></button>
+                <button type="button" class="rte-btn" data-fmt="bullet" title="Bullet list">•≡</button>
+                <button type="button" class="rte-btn" data-fmt="number" title="Numbered list">1≡</button>
+                <button type="button" class="rte-btn" data-fmt="link" title="Insert reference">🔗</button>
+                <button type="button" class="rte-btn" data-fmt="attach" title="Attach rubric note">📎</button>
+              </div>
+
+              <textarea
+                id="doctor-comment-textarea"
+                rows="6"
+                maxlength="1000"
+                class="comment-textarea"
+              >Student A (Mary Pertem) achieved 65% on the BNF 301 midterm, which is slightly below the class average of 68%. The grade is primarily affected by failing scores on Quizzes 3 and 4, coupled with a 75% attendance rate (5% below target). While lab work remains satisfactory at 78%, attendance and quiz preparation require immediate intervention. Recommend mandatory TA office hours 2 hrs/week to review data structure fundamentals before the final exam and an advisor check-in next week.</textarea>
+
+              <div class="char-counter-row">
+                <span id="comment-char-count">512 / 1000 characters</span>
+              </div>
+
+              <div class="field-group">
+                <label for="comment-tag-select" class="field-label">Tag / Category</label>
+                <select id="comment-tag-select" class="sim-select">
+                  <option value="Midterm Grade Explanation & Action Plan" selected>Midterm Grade Explanation &amp; Action Plan</option>
+                  <option value="Mandatory TA Office Hours Referral">Mandatory TA Office Hours Referral</option>
+                  <option value="Attendance & Engagement Warning">Attendance &amp; Engagement Warning</option>
+                  <option value="Advisor Follow-Up Note">Advisor Follow-Up Note</option>
+                </select>
+              </div>
+
+              <div class="comment-actions-bar">
+                <label class="toggle-switch-wrap">
+                  <input id="share-student-ta-toggle" type="checkbox" checked />
+                  <span class="toggle-slider"></span>
+                  <span class="toggle-text">Share with Student &amp; TA</span>
+                </label>
+
+                <div class="comment-btn-group">
+                  <button type="button" id="btn-cancel-comment" class="cancel-outline-btn">Cancel</button>
+                  <button type="submit" id="btn-post-comment" class="primary-indigo-btn">
+                    <span aria-hidden="true">✈</span>
+                    <span>Post Comment &amp; Notify TA</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div class="recent-comments-section">
+              <h3 class="recent-comments-title">Recent Posted Comments &amp; Grade Notes</h3>
+              <div id="recent-comments-list" class="comments-feed"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-banner" class="toast-banner hidden" role="status" aria-live="polite"></div>
+
+    <!-- Modal Dialog for Quick Actions / Info -->
+    <div id="modal-backdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 id="modal-title" class="modal-title">Action Details</h3>
+          <button type="button" id="modal-close-btn" class="modal-close-x" aria-label="Close modal">✕</button>
+        </div>
+        <div id="modal-body" class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" id="modal-cancel-btn" class="cancel-outline-btn">Close</button>
+          <button type="button" id="modal-confirm-btn" class="primary-indigo-btn">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
